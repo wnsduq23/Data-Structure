@@ -15,14 +15,17 @@ int	main(void)
 	int** bit;
 
 	scanf("%d", &n);
+
 	bit = (int**)malloc(sizeof(int*) * n);
 	if (bit == NULL)
 		return (-1);
+
 	for (i = 0; i < n; i++)
 	{
 		bit[i] = (int*)malloc(sizeof(int) * n);
 		if (bit[i] == NULL)
 			return (-1);
+
 		for (j = 0; j < n; j++)
 			scanf("%d", &bit[i][j]);
 	}
