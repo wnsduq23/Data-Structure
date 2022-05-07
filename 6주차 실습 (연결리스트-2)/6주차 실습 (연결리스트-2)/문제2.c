@@ -88,6 +88,19 @@ void	add_and_print_poly(t_list* h1, t_list* h2)
 	result = NULL;
 }
 
+void	free_list(t_list* head)
+{
+	t_list* dump;
+
+	head = head->next;
+	while (head)
+	{
+		dump = head;
+		head = head->next;
+		free(dump);
+	}
+}
+
 int main(void)
 {
 	int		N, M; // 반복 지우기
@@ -126,8 +139,8 @@ int main(void)
 		make_poly(head2, c, e);
 	}
 	add_and_print_poly(head1, head2);
-	free(head1);
-	free(head2);
+	free_list(head1);
+	free_list(head2);
 	head1 = NULL;
 	head2 = NULL;
 	return (0);
