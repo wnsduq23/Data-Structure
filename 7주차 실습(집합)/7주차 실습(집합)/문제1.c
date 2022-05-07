@@ -86,7 +86,7 @@ int	main(void)
 {
 	int		sizeA, sizeB, i, elem;
 	t_set	A, B;
-	t_set* p, * q, * tmp;
+	t_set* p = NULL, * q = NULL, * tmp = NULL;
 
 	memset(&A, 0, sizeof(t_set));
 	memset(&B, 0, sizeof(t_set));

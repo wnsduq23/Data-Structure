@@ -118,6 +118,7 @@ t_set intersect(t_set* A, t_set* B)
 	return (C);
 }
 
+// list의 첫 번째 노드가 아무것도 아닐 경우
 void	free_list(t_set* list)
 {
 	t_set* dummy;
@@ -136,7 +137,7 @@ int main(void)
 	int sizeA, sizeB, i, e;
 	t_set A, B;
 	t_set u, inter;
-	t_set* p, * q;
+	t_set* p = NULL, * q = NULL;
 
 	memset(&A, 0, sizeof(t_set));
 	memset(&B, 0, sizeof(t_set));
@@ -168,6 +169,8 @@ int main(void)
 	inter = intersect(&A, &B);
 	print(&inter);
 
+	free_list(&u);
+	free_list(&inter);
 	free_list(&A);
 	free_list(&B);
 	return (0);
